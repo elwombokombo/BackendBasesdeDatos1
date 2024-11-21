@@ -28,7 +28,7 @@ CREATE TABLE Equipamiento (
 );
 
 CREATE TABLE Instructores (
-    ci SMALLINT NOT NULL,
+    ci INT NOT NULL,
     nombre CHAR(15) NOT NULL,
     apellido CHAR(20) NOT NULL,
     PRIMARY KEY (ci)
@@ -42,7 +42,7 @@ CREATE TABLE Turnos (
 );
 
 CREATE TABLE Alumnos (
-    ci SMALLINT NOT NULL,
+    ci INT NOT NULL,
     nombre CHAR(15) NOT NULL,
     apellido CHAR(20) NOT NULL,
     fecha_nacimiento DATE NOT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE Alumnos (
 
 CREATE TABLE Clase (
     id INT NOT NULL,
-    ci_instructor SMALLINT NOT NULL,
+    ci_instructor INT NOT NULL,
     id_actividad INT NOT NULL,
     id_turno INT NOT NULL,
     dictada BOOL NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE Clase (
 
 CREATE TABLE Alumno_clase (
     id_clase INT NOT NULL,
-    ci_alumno SMALLINT NOT NULL,
+    ci_alumno INT NOT NULL,
     id_equipamiento INT NOT NULL,
     PRIMARY KEY (id_clase, ci_alumno, id_equipamiento), -- Requiere PRIMARY KEY para evitar duplicados
     FOREIGN KEY (id_clase) REFERENCES Clase(id),

@@ -33,5 +33,3 @@ INSERT INTO clase VALUES
 (3, 98765432, 1, 3, false);
 
 
-INSERT INTO alumno_clase VALUES
-();
